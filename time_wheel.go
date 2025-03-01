@@ -39,7 +39,7 @@ func NewTimeWheel(slotSize int, interval time.Duration, opts ...Option) TimeWhee
 		stopC:     make(chan struct{}),
 		slots:     make([]*list.List, slotSize),
 		keys:      make(map[string]*list.Element),
-		log:       log{},
+		log:       emptyLog{},
 	}
 
 	for i := 0; i < slotSize; i++ { //初始化每个槽位

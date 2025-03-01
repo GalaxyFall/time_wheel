@@ -16,3 +16,9 @@ func (l log) Logf(format string, args ...interface{}) {
 func (l log) Errorf(format string, args ...interface{}) {
 	_ = fmt.Errorf(format, args...)
 }
+
+type emptyLog struct{}
+
+func (e emptyLog) Logf(format string, args ...interface{}) {}
+
+func (e emptyLog) Errorf(format string, args ...interface{}) {}
